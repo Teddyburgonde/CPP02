@@ -19,3 +19,29 @@ Les nombres en virgule fixe en C++ représentent des nombres décimaux en réser
 - Un destructeur : Libère la mémoire ou d'autres ressources lorsque l'objet est détruit.
 
 ```
+
+lundi :
+
+-CPP02 ex00 ❌
+-CPP02 ex01 ❌
+
+mardi :
+
+-CPP02 ex02 ❌
+
+Mercredi 
+
+-Correction CPP02 ❌
+-CPP03 ex00 ❌
+-CPP03 ex01 ❌
+
+Jeudi
+ 
+-CPP03 ex02 ❌
+-Correction CPP03
+
+
+
+
+
+✅ ❌
