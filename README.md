@@ -13,10 +13,31 @@ Les nombres en virgule fixe en C++ représentent des nombres décimaux en réser
 4 choses : 
 
 ```c
+class Fixed {
+
+  public:
+  Fixed(); // Un constructeur par defaut
+  ~Fixed(); // Un destructeur 
+  Fixed(const Fixed& other); // Constructeur par copie 
+  Fixed& operator=(const Fixed& other); // Operateur d'assignation
+
+};
+```
+
+```c
 - Un constructeur par defaut : Initialise un objet avec une valeur par défaut.
 - Un constructeur par copie : Crée une copie d'un objet existant.
 - Un operateur d'affectation (Surcharge d'opérateur) : Permet d'affecter un objet à un autre déjà existant.
 - Un destructeur : Libère la mémoire ou d'autres ressources lorsque l'objet est détruit.
+
+```
+
+Exemple constructeur par copie
+
+```c
+
+Fixed a; // 'a' est un objet de type Fixed.
+Fixed b(a); // 'b' est un objet de type Fixed, créé en copiant 'a' grâce au constructeur de copie.
 
 ```
 
@@ -39,8 +60,6 @@ Jeudi
  
 -CPP03 ex02 ❌
 -Correction CPP03
-
-
 
 
 
