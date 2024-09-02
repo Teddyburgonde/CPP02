@@ -41,9 +41,49 @@ Fixed b(a); // 'b' est un objet de type Fixed, créé en copiant 'a' grâce au c
 
 ```
 
+```c
+
+// Constructors 
+Fixed::Fixed() : _value(0) 
+{
+
+}
+
+// Constructor by copy
+Fixed::Fixed(const Fixed& copy)
+{
+
+}
+
+// Destuctor
+Fixed::~Fixed() 
+{
+    
+}
+
+// Overloaded Operators
+Fixed& Fixed::operator=(const Fixed& other)
+{
+    
+}
+
+//Getter
+int Fixed::getRawBits(void) const
+{
+    
+}
+
+// Setter
+void Fixed::setRawBits(int const raw)
+{
+    
+}
+
+
+```
 lundi :
 
--CPP02 ex00 ❌
+-CPP02 ex00 ✅
 -CPP02 ex01 ❌
 
 mardi :

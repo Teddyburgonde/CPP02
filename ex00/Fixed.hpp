@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 12:27:28 by tebandam          #+#    #+#             */
-/*   Updated: 2024/09/02 13:00:55 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/09/02 20:42:05 by teddybandam      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,24 @@
 
 #include <iostream>
 
-class Fixed {
+class Fixed 
+{
+  private:
+  int _value;
+  static const int _nb_bits = 8;
 
   public:
   Fixed();
+  Fixed(const Fixed& copy);
+
   ~Fixed();
-  Fixed(const Fixed& other);
-  Fixed& operator=(const Fixed& other);
+  
+  Fixed& operator=(const Fixed& copy);
 
   public:
   int getRawBits(void) const;
   void setRawBits(int const raw);
 
-  private:
-  int value;
-  static const int nb_bits = 8;
 };
 
 #endif
