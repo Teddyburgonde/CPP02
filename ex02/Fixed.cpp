@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 12:30:37 by tebandam          #+#    #+#             */
-/*   Updated: 2024/09/04 11:20:39 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/09/04 17:18:21 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,3 +72,25 @@ std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
     os << fixed.toFloat();
     return (os);
 }
+
+// i ?? 
+// i++ ??
+Fixed& Fixed::operator++()
+{
+    
+}
+
+
+
+	/* 
+    Fixed operator+(const Fixed& fixed) const;
+	Fixed operator-(const Fixed& fixed) const;
+	Fixed operator*(const Fixed& fixed) const;
+	Fixed operator/(const Fixed& fixed) const; 
+    */
+
+/* 
+Les 4 opérateurs d’incrémentation et de décrémentation (pré-incrémentation et
+post-incrémentation, pré-décrémentation et post-décrémentation) qui diminueront
+la valeur du nombre à virgule fixe d’unité ϵ tel que 1 + ϵ > 1. 
+*/
