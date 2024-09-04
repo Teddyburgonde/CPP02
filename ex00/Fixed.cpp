@@ -30,7 +30,7 @@ Fixed::~Fixed()
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
-    std::cout << "Copy assignation operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
         this->_value = other.getRawBits();
     return (*this);
