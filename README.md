@@ -1,3 +1,68 @@
+**Revision**
+
+**EX00**
+
+Il y a 4 composants dans la forme canonique : 
+
+- Le constructor par defaut :
+Il permet de cree un objet sans fournir d'argument.
+Il permet initialisation des variables.
+
+- Constructeur par copie :
+Il permet de copier un objet 
+Il permet de faire une copie profonde (Les deux objets ne partagent pas le meme emplacement memoire).
+
+Fixed::Fixed(const Fixed& copy)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = copy;
+    // permet de copier l'objet copy dans l'objet courant ( objet qu'on vient de creer grace a la classe).
+}
+
+- Le destructeur :
+Il permet de detruire l'objet.
+Il libere les ressources allouées.
+
+
+- La surcharge d'operateur 
+Permet de copier les valeurs d'un objet existant vers un autre déja existant.
+
+Fixed& Fixed::operator=(const Fixed& other)
+{
+    std::cout << "Copy assignment operator called" << std::endl;
+    // si lobjet courant est different de objet passer en parametre il copie la valeur de l'objet other dans l'objet courant
+    if (this != &other)
+        this->_value = other.getRawBits();
+    return (*this);
+}
+
+
+**EX02**
+
+bool Fixed::operator>(const Fixed& fixed) const
+{
+    return (getRawBits() > fixed.getRawBits());
+}
+
+permet de comparer les objet , sans cela on ne peut pas comparer les objet
+
+
+
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
+{
+    os << fixed.toFloat();
+    return (os);
+}
+Envoie dans le flux de sortit la reprensetation de fixed
+
+🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱
+
+
+
+
+
+
 **EX00**
 
 **Les nombres en virgule fixe**
@@ -81,14 +146,30 @@ void Fixed::setRawBits(int const raw)
 
 
 ```
+
+**Exo2**
+
+```c
+
+Fixed& operator++(); //prefix increment operator
+c'est comme un ++i;
+
+Fixed operator++(int); //postfix increment operator
+c'est comme un i++:
+
+Fixed& operator--(); //prefix decrement operator
+Fixed operator--(int); //postfix decrement operator
+```
+
+
 lundi :
 
 -CPP02 ex00 ✅
--CPP02 ex01 ❌
+-CPP02 ex01 ✅ 
 
 mardi :
 
--CPP02 ex02 ❌
+-CPP02 ex02 ✅
 
 Mercredi 
 
@@ -100,7 +181,6 @@ Jeudi
  
 -CPP03 ex02 ❌
 -Correction CPP03
-
 
 
 ✅ ❌

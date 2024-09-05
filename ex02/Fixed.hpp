@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 12:27:28 by tebandam          #+#    #+#             */
-/*   Updated: 2024/09/05 13:08:54 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:47:41 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ class Fixed
 	Fixed operator*(const Fixed& fixed) const;
 	Fixed operator/(const Fixed& fixed) const;
 	
-	Fixed& operator++(); //prefix increment operator
-	Fixed operator++(int); //postfix increment operator
-	Fixed& operator--(); //prefix decrement operator
-	Fixed operator--(int); //postfix decrement operator
+	Fixed& operator++();
+	Fixed operator++(int);
+	Fixed& operator--();
+	Fixed operator--(int);
 
 	static Fixed& min(Fixed& fixed1, Fixed& fixed2);
 	static const Fixed& min(const Fixed& fixed1, const Fixed& fixed2);

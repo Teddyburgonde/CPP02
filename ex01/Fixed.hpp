@@ -13,10 +13,6 @@
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-// Une fonction membre int toInt( void ) const;
-// qui convertit la valeur en virgule fixe en nombre entier.
-
-
 #include <iostream>
 #include <cmath>
 

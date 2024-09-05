@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
+/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 12:30:37 by tebandam          #+#    #+#             */
-/*   Updated: 2024/09/02 21:31:41 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/09/05 19:01:14 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Fixed::Fixed(const Fixed& copy)
     *this = copy;
 }
 
-Fixed::~Fixed() 
+Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
 }
