@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 12:27:28 by tebandam          #+#    #+#             */
-/*   Updated: 2024/09/04 17:00:35 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/09/05 09:22:53 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ class Fixed
 	
 	Fixed& operator++(); //prefix increment operator
 	Fixed operator++(int); //postfix increment operator
-
 	Fixed& operator--(); //prefix decrement operator
 	Fixed operator--(int); //postfix decrement operator
 

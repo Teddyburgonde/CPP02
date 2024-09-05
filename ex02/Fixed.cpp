@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 12:30:37 by tebandam          #+#    #+#             */
-/*   Updated: 2024/09/04 17:18:21 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/09/05 09:59:57 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,24 +73,36 @@ std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
     return (os);
 }
 
-// i ?? 
-// i++ ??
 Fixed& Fixed::operator++()
+{
+     _value++;
+     return (*this);
+}
+
+Fixed& Fixed::operator--()
+{
+    _value--;
+    return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+    Fixed   tmp(*this);
+    operator++();
+    return (tmp);
+}
+
+Fixed Fixed::operator--(int)
+{
+    Fixed   tmp(*this);
+    operator--();
+    return (tmp);
+}
+
+// Une fonction membre statique min prenant en paramètres deux références sur des
+// nombres à virgule fixe et qui retourne le plus petit d’entre eux.
+
+static Fixed& min(Fixed& fixed1, Fixed& fixed2)
 {
     
 }
-
-
-
-	/* 
-    Fixed operator+(const Fixed& fixed) const;
-	Fixed operator-(const Fixed& fixed) const;
-	Fixed operator*(const Fixed& fixed) const;
-	Fixed operator/(const Fixed& fixed) const; 
-    */
-
-/* 
-Les 4 opérateurs d’incrémentation et de décrémentation (pré-incrémentation et
-post-incrémentation, pré-décrémentation et post-décrémentation) qui diminueront
-la valeur du nombre à virgule fixe d’unité ϵ tel que 1 + ϵ > 1. 
-*/
