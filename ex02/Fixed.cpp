@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 12:30:37 by tebandam          #+#    #+#             */
-/*   Updated: 2024/09/05 09:59:57 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/09/05 14:03:34 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,81 @@
 
 Fixed::Fixed() : _value(0) 
 {
-    std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int _nb)
 {
-    std::cout << "Int constructor called" << std::endl;
     _value = _nb << _value_bits;
 }
 
 Fixed::Fixed(const float nb_f)
 {
-    std::cout << "Float constructor called" << std::endl;
     _value = roundf(nb_f * (1 << _value_bits));
 }
 
 Fixed::Fixed(const Fixed& copy) :_value(copy._value)
 {
-    std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::~Fixed() 
 {
-    std::cout << "Destructor called" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
         this->_value = other.getRawBits();
     return (*this);
+}
+
+bool Fixed::operator>(const Fixed& fixed) const
+{
+    return (getRawBits() > fixed.getRawBits());
+}
+
+bool Fixed::operator<(const Fixed& fixed) const
+{
+    return (getRawBits() < fixed.getRawBits());
+}
+
+bool Fixed::operator>=(const Fixed& fixed) const
+{
+    return (getRawBits() >= fixed.getRawBits());
+}
+
+bool Fixed::operator<=(const Fixed& fixed) const
+{
+    return (getRawBits() <= fixed.getRawBits());
+}
+
+bool Fixed::operator==(const Fixed& fixed) const
+{
+    return (getRawBits() == fixed.getRawBits());
+}
+
+bool Fixed::operator!=(const Fixed& fixed) const
+{
+    return (getRawBits() != fixed.getRawBits());
+}
+
+Fixed Fixed::operator+(const Fixed& fixed) const
+{
+    return(toFloat() + fixed.toFloat());
+}
+
+Fixed Fixed::operator-(const Fixed& fixed) const
+{
+    return(toFloat() - fixed.toFloat());
+}
+
+Fixed Fixed::operator*(const Fixed& fixed) const
+{
+    return(toFloat() * fixed.toFloat());
+}
+
+Fixed Fixed::operator/(const Fixed& fixed) const
+{
+    return(toFloat() / fixed.toFloat());
 }
 
 int Fixed::getRawBits(void) const
@@ -99,10 +143,30 @@ Fixed Fixed::operator--(int)
     return (tmp);
 }
 
-// Une fonction membre statique min prenant en paramètres deux références sur des
-// nombres à virgule fixe et qui retourne le plus petit d’entre eux.
-
-static Fixed& min(Fixed& fixed1, Fixed& fixed2)
+Fixed& Fixed::min(Fixed& fixed1, Fixed& fixed2)
 {
-    
+    if (fixed1 < fixed2)
+        return (fixed1);
+    return (fixed2);
+}
+
+const Fixed& Fixed::min(const Fixed& fixed1, const Fixed& fixed2)
+{
+    if (fixed1 < fixed2)
+        return (fixed1);
+    return (fixed2);
+}
+
+Fixed& Fixed::max(Fixed& fixed1, Fixed& fixed2)
+{
+    if (fixed1 > fixed2)
+        return (fixed1);
+    return (fixed2);
+}
+
+const Fixed& Fixed::max(const Fixed& fixed1, const Fixed& fixed2)
+{
+    if (fixed1 > fixed2)
+        return (fixed1);
+    return (fixed2);
 }
